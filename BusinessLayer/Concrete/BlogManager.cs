@@ -38,7 +38,12 @@ namespace BusinessLayer.Concrete
             return _dal.GetAll();
         }
 
-        public void Update(Blog blog)
+		public List<Blog> GetAllWithCategory()
+		{
+            return _dal.GetAllWithCategory();
+		}
+
+		public void Update(Blog blog)
         {
             _dal.Update(blog);
         }
