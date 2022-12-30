@@ -14,5 +14,6 @@ namespace BusinessLayer.Abstract
         void Update(Comment comment);
         Comment Get(int id);
         List<Comment> GetAll();
+        List<Comment> GetAll(int id);
     }
 }

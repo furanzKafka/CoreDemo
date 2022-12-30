@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrete
             return _dal.GetAll();
         }
 
+        public List<Comment> GetAll(int id)
+        {
+            return _dal.GetAll(x=>x.BlogId==id);
+        }
+
         public void Update(Comment comment)
         {
             _dal.Update(comment);

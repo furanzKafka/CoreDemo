@@ -41,7 +41,7 @@
 								<ul class="blog-icons my-4">
 									<li>
 										<a href="#">
-											<i class="far fa-calendar-alt"></i> @item.CreateDate</a>
+											<i class="far fa-calendar-alt"></i> @(((DateTime)item.CreateDate).ToString("dd-MMM-yyyy"))</a>
 									</li>
 									<li class="mx-2">
 										<a href="#">
@@ -55,10 +55,11 @@
 
 								</ul>
 								<h5 class="card-title">
-									<a href="single.html">@item.Title</a>
+									<a href="/Blog/BlogDetails/@item.Id/">@item.Title</a>
 								</h5>
-								<p class="card-text mb-3">@item.Content</p>
-								<a href="single.html" class="btn btn-primary read-m">Devamini Oku</a>
+								@*<p class="card-text mb-3">@item.Content</p>*@
+								<p class="card-text mb-3">@item.Content?.Substring(0,item.Content.Substring(0,130).LastIndexOf(" "))...</p>
+								<a href="/Blog/BlogDetails/@item.Id/" class="btn btn-primary read-m">Devamini Oku</a>
 							</div>
 						</div>
 					}
