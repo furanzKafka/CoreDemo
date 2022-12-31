@@ -62,7 +62,7 @@
                     </div>
                     @*}*@
 
-                    @await Component.InvokeAsync("CommentListByBlog")
+                    @await Component.InvokeAsync("CommentListByBlog",new {id=ViewBag.Id})
 
                     @*@await Html.PartialAsync("~/Views/Comment/PartialCommentListByBlogId.cshtml")*@
 
@@ -86,7 +86,8 @@
                             </form>
 
                         </div>
-                        <div class="tech-btm">
+                        @await Component.InvokeAsync("CategoryList")
+                        @*<div class="tech-btm">
                             <h4>Categories</h4>
                             <ul class="list-group single">
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -102,7 +103,7 @@
                                     <span class="badge badge-primary badge-pill">1</span>
                                 </li>
                             </ul>
-                        </div>
+                        </div>*@
                         <div class="tech-btm">
                             <h4>Top stories of the week</h4>
 
