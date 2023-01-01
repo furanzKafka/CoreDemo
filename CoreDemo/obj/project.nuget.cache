@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "O5jxX6jrkNsZRcbdOc/quIj5UWQz5v3qsPLFQKwWsNCfj2/Faq4u7/x1LuFLhJNAaiC7Qnw6H8zXd+dPu8ZCGw==",
+  "dgSpecHash": "vaXlltoLCIyIvdqXR6EMKYX/zwGJPRJgP0w8Zp14VLakAVnhfzQBY6eElEu7ivv0h2lCIsZZmnrRlTIDPDo17Q==",
   "success": true,
   "projectFilePath": "D:\\Tutorial\\cs\\CoreDemo\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\furka\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\furka\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

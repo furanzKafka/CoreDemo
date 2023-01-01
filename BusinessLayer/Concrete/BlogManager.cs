@@ -38,12 +38,17 @@ namespace BusinessLayer.Concrete
             return _dal.GetAll();
         }
 
-		public List<Blog> GetAllWithCategory()
-		{
-            return _dal.GetAllWithCategory();
-		}
+        public List<Blog> GetAllByWriter(int id)
+        {
+            return _dal.GetAll(x => x.WriterId == id);
+        }
 
-		public void Update(Blog blog)
+        public List<Blog> GetAllWithCategory()
+        {
+            return _dal.GetAllWithCategory();
+        }
+
+        public void Update(Blog blog)
         {
             _dal.Update(blog);
         }

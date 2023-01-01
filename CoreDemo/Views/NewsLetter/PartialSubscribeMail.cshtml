@@ -1,0 +1,13 @@
+﻿@*@using EntityLayer.Concrete;
+@model NewsLetter
+*@
+
+<div class="tech-btm">
+    <h4>Mail bultenine abone olabilirsiniz</h4>
+    
+    <form action="/NewsLetter/SubscribeMail/" method="post">
+        <input type="email" placeholder="Email" required="" name="Mail">
+        <input type="submit" value="abone ol">
+    </form>
+
+</div>
