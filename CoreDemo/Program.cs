@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSession();
+//builder.Services.AddSession();        //remove after add app.UseAuthentication();
 
 builder.Services.AddMvc(
     config =>
@@ -35,6 +35,8 @@ if (!app.Environment.IsDevelopment())
 app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
 
 app.UseStaticFiles();
+
+app.UseAuthentication();
 
 app.UseSession();
 app.UseRouting();

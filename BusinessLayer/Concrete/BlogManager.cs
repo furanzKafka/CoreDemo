@@ -43,6 +43,11 @@ namespace BusinessLayer.Concrete
             return _dal.GetAll(x => x.WriterId == id);
         }
 
+        public List<Blog> GetAllLastThree()
+        {
+            return _dal.GetAll().Take(3).ToList();            
+        }
+
         public List<Blog> GetAllWithCategory()
         {
             return _dal.GetAllWithCategory();
