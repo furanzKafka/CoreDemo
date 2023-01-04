@@ -45,12 +45,17 @@ namespace BusinessLayer.Concrete
 
         public List<Blog> GetAllLastThree()
         {
-            return _dal.GetAll().Take(3).ToList();            
+            return _dal.GetAll().Take(3).ToList();
         }
 
         public List<Blog> GetAllWithCategory()
         {
             return _dal.GetAllWithCategory();
+        }
+
+        public List<Blog> GetAllWithCategoryByWriter(int id)
+        {
+            return _dal.GetAllWithCategoryByWriter(id);
         }
 
         public void Update(Blog blog)
