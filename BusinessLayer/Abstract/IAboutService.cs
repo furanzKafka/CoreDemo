@@ -8,12 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IAboutService
-    {
-        void Add(About about);
-        void Delete(About about);        
-        void Update(About about);
-        About Get(int id);        
-        List<About> GetAll();        
+    public interface IAboutService:IGenericService<About>
+    {        
     }
 }
