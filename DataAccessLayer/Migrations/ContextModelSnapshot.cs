@@ -103,6 +103,31 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Blogs");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.BlogRating", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RatingCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalScore")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId")
+                        .IsUnique();
+
+                    b.ToTable("BlogRatings");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -144,6 +169,9 @@ namespace DataAccessLayer.Migrations
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
@@ -271,6 +299,17 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Writer");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.BlogRating", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.Blog", "Blog")
+                        .WithOne("BlogRatings")
+                        .HasForeignKey("EntityLayer.Concrete.BlogRating", "BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.Blog", "Blog")
@@ -284,6 +323,9 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
                 {
+                    b.Navigation("BlogRatings")
+                        .IsRequired();
+
                     b.Navigation("Comments");
                 });
 
