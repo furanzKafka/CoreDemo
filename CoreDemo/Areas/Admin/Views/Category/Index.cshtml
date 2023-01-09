@@ -1,0 +1,36 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using EntityLayer.Concrete;
+@*@model List<Category>*@
+@model IPagedList<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>adi</th>
+        <th>pasif yap</th>
+        <th>aktif yap</th>
+        <th>duzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td><a href="#" class="btn btn-danger">pasif tap</a></td>
+            <td><a href="#" class="btn btn-outline-warning">aktif tap</a></td>
+            <td><a href="#" class="btn btn-success">duzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/Category/AddCategory/" class="btn btn-primary">eklle</a>
+<br />
+@Html.PagedListPager((IPagedList)Model,x=>Url.Action("Index",new {x}))
