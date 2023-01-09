@@ -14,6 +14,7 @@ namespace CoreDemo.Controllers
     {
         BlogManager bm = new BlogManager(new EfBlogRepository());
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
+        WriterManager wm = new WriterManager(new EfWriterRepository());
         public IActionResult Index()
         {
             var values = bm.GetAllWithCategory();
@@ -28,7 +29,9 @@ namespace CoreDemo.Controllers
         }
         public IActionResult BlogListByWriter()
         {
-            var values = bm.GetAllWithCategoryByWriter(1);
+            var userMail = User.Identity.Name;
+            var values=wm.GetByMail(userMail);
+            //var values = bm.GetAllWithCategoryByWriter(1);
             return View(values);
         }
         [HttpGet]
@@ -46,13 +49,15 @@ namespace CoreDemo.Controllers
         [HttpPost]
         public IActionResult BlogAdd(Blog blog)
         {
+            var userMail = User.Identity.Name;
+            Writer myWriter = wm.GetByMail(userMail);
             BlogValidator bv = new BlogValidator();
             ValidationResult result = bv.Validate(blog);
             if (result.IsValid)
             {
                 blog.Status = true;
                 blog.CreateDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                blog.WriterId = 1;
+                blog.WriterId = myWriter.Id;
                 bm.Add(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
             }
@@ -90,7 +95,7 @@ namespace CoreDemo.Controllers
         public IActionResult UpdateBlog(Blog model)
         {
             bm.Update(model);
-            return View();
+            return RedirectToAction("BlogListByWriter");
         }
 
     }

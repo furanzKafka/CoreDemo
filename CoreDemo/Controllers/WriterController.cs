@@ -30,7 +30,8 @@ namespace CoreDemo.Controllers
         [HttpGet]
         public IActionResult WriterEditProfile()
         {
-            var writerValues = wm.Get(1);
+            var usreMail = User.Identity.Name;
+            var writerValues=wm.GetByMail(usreMail);
             return View(writerValues);
         }
         [HttpPost]

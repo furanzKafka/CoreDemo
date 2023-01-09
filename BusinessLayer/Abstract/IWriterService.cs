@@ -14,5 +14,6 @@ namespace BusinessLayer.Abstract
         //void Update(Writer writer);
         //Writer Get(int id);
         //List<Writer> GetAll();
+        Writer GetByMail(string mail);
     }
 }

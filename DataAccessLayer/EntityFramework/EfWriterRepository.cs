@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using System;
@@ -9,7 +10,14 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfWriterRepository:GenericRepository<Writer>,IWriterDal
+    public class EfWriterRepository : GenericRepository<Writer>, IWriterDal
     {
+        public Writer GetByMail(string mail)
+        {
+            using (var c = new Context())
+            {
+                return c.Writers.Where(x => x.Mail == mail).FirstOrDefault();                
+            }
+        }
     }
 }

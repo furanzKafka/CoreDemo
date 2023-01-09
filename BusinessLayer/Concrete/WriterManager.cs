@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrete
             return _dal.GetAll();
         }
 
+        public Writer GetByMail(string mail)
+        {
+            return _dal.GetByMail(mail);
+        }
+
         public void Update(Writer writer)
         {
             _dal.Update(writer);

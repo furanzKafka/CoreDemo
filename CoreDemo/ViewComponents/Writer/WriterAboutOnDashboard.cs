@@ -9,7 +9,9 @@ namespace CoreDemo.ViewComponents.Writer
         WriterManager wm = new WriterManager(new EfWriterRepository());
         public IViewComponentResult Invoke()
         {
-            var values = wm.Get(1);
+            //var values = wm.Get(1);
+            var userMail = User.Identity.Name;
+            var values = wm.GetByMail(userMail);
             return View(values);
         }
     }
