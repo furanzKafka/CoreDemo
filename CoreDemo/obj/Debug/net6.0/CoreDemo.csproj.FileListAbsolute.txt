@@ -300,3 +300,10 @@ D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\obj\Debug\net6.0\ref\CoreDemo.dll
 D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\JetBrains.Annotations.dll
 D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\X.PagedList.dll
 D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\ClosedXML.dll
+D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\ExcelNumberFormat.dll
+D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\Irony.dll
+D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\SixLabors.Fonts.dll
+D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\System.IO.Packaging.dll
+D:\Tutorial\cs\CoreDemo\CoreDemo\CoreDemo\bin\Debug\net6.0\XLParser.dll
