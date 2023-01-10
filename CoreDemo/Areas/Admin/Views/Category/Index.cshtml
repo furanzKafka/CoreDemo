@@ -25,7 +25,7 @@
         <tr>
             <td>@item.Id</td>
             <td>@item.Name</td>
-            <td><a href="#" class="btn btn-danger">pasif tap</a></td>
+            <td><a href="/Admin/Category/CategoryDelete/@item.Id/" id="btnDelete" onclick="return confirm('silmek icin emin misin');" class="btn btn-danger">pasif tap</a></td>
             <td><a href="#" class="btn btn-outline-warning">aktif tap</a></td>
             <td><a href="#" class="btn btn-success">duzenle</a></td>
         </tr>

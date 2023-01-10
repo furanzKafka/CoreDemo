@@ -25,13 +25,13 @@ namespace CoreDemo.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddCategory(Category category)
         {
-            CategoryValidator cv= new CategoryValidator();
+            CategoryValidator cv = new CategoryValidator();
             ValidationResult result = cv.Validate(instance: category);
             if (result.IsValid)
             {
                 category.Status = true;
                 cm.Add(category);
-                return RedirectToAction("Index","Category");
+                return RedirectToAction("Index", "Category");
             }
             else
             {
@@ -41,6 +41,12 @@ namespace CoreDemo.Areas.Admin.Controllers
                 }
             }
             return View();
+        }
+        public IActionResult CategoryDelete(int id)
+        {
+            var category = cm.Get(id);
+            cm.Delete(category);
+            return RedirectToAction("Index");            
         }
     }
 }
